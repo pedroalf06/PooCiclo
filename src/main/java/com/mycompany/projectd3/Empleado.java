@@ -11,7 +11,7 @@ package com.mycompany.projectd3;
 public class Empleado {
     
     private String nombre;
-    private int horasT;
+    private int horasT, sexo;
     private double cuotaH, sueldo;
 
     public void setNombre(String nombre) {
@@ -25,9 +25,25 @@ public class Empleado {
     public void setCuotaH(double cuotaH) {
         this.cuotaH = cuotaH;
     }
+
+    public void setSexo(int sexo) {
+        this.sexo = sexo;
+    }
+    
+    
     
     public void calcularSueldo(){
-    
+   do{
+        switch(sexo){
+        case 1: sueldo = (horasT *cuotaH) *2;
+        break;
+        
+        case 2: sueldo = horasT *cuotaH;
+        break;
+        
+        default: System.out.println("opcion Invalida");
+    }
+   }while(sexo != 1 || sexo != 2 );  
         
         
     }

@@ -14,13 +14,18 @@ public class ProjectD3 {
        Scanner sc = new Scanner(System.in);
        
         String nombre;
-        int hora;
+        int hora, sexo, seguir;
         double cuota;
         
+        do{
         Empleado mp = new Empleado();
         
-        System.out.println("Ingrese nombre: ");
+        System.out.println("\nIngrese nombre: ");
         nombre = sc.nextLine();
+        
+        System.out.println("Ingresar el sexo: ");
+        System.out.println("1-  mujer; 2 -  hombre ");
+        sexo = sc.nextInt();
         
         System.out.println("Ingresar Horas trabajadas: ");
         hora = sc.nextInt();
@@ -31,11 +36,16 @@ public class ProjectD3 {
         mp.setNombre(nombre);
         mp.setHorasT(hora);
         mp.setCuotaH(cuota);
+         mp.setSexo(sexo);
         mp.calcularSueldo();
-        
+       
         System.out.println("Nombre: "+mp.getNombre());
         System.out.println("Sueldo: "+mp.getSueldo());
-                               
+        
+        System.out.println("Si desea continuar presione 1, de lo contrario presiones otra tecla");
+        seguir = sc.nextInt();
+        sc.nextLine();
+        }while (seguir == 1);
         
     }
 }
